@@ -84,6 +84,7 @@ img {
 .is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
 /* INDEX.HTML */
@@ -114,6 +115,10 @@ img {
   width: 100%;
   height: 100%;
 
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
+
   background-color: var(--modal-bgc);
 }
 
@@ -126,6 +131,9 @@ img {
   min-height: 576px;
 
   transform: translate(-50%, -50%);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 
   border-radius: 4px;
   background-color: var(--modal-window);
@@ -146,10 +154,20 @@ img {
   width: 24px;
   height: 24px;
 
+  background-color: var(--accent-color);
+
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
 
+  transition: background-color 250ms var(--cubic), fill 250ms var(--cubic);
+
   cursor: pointer;
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--hover-focus-color);
+  fill: var(--white);
 }
 
 .close-icon {
@@ -186,6 +204,9 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 
   color: var(--title-text-color);
 }
@@ -237,6 +258,9 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 
   color: var(--primary-text-color);
 }
@@ -291,6 +315,10 @@ img {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 
   background-color: var(--buttons-bgc-color);
   color: var(--white);
@@ -392,7 +420,16 @@ img {
   height: 100%;
   border-radius: 50%;
 
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
+
   background-color: var(--social-button-color);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--social-button-hover);
 }
 
 .socials {
@@ -404,11 +441,6 @@ img {
 .social-button {
   width: 40px;
   height: 40px;
-}
-
-.social-link:hover,
-.social-link:focus {
-  background-color: var(--social-button-hover);
 }
 
 .social-icon {
@@ -511,12 +543,15 @@ img {
 
   border: 1px solid #8e8f99;
   border-radius: 4px;
+
+  transition: border-color 250ms var(--cubic);
 }
 
 .customer-icon {
   width: 104px;
   height: 56px;
   fill: #8e8f99;
+  transition: fill 250ms var(--cubic);
 }
 
 .customer-button:is(:hover, :focus) {
@@ -581,6 +616,10 @@ img {
   height: 100%;
   border-radius: 50%;
 
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
+
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -615,6 +654,8 @@ img {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
+
+  transition: background-color 250ms var(--cubic), color 250ms var(--cubic);
 
   background-color: var(--lightmode-color);
   color: var(--buttons-bgc-color);
