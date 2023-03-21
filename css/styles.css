@@ -130,7 +130,8 @@ img {
   top: 50%;
   left: 50%;
 
-  min-width: 408px;
+  max-width: 408px;
+  width: 100%;
   min-height: 576px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--cubic);
@@ -153,6 +154,7 @@ img {
 
   width: 24px;
   height: 24px;
+  padding: 0;
 
   background-color: var(--accent-color);
 
@@ -206,6 +208,7 @@ img {
   text-decoration: none;
 
   transition-duration: 250ms;
+  transition-property: color;
   transition-timing-function: var(--cubic);
 
   color: var(--title-text-color);
@@ -260,6 +263,7 @@ img {
   text-decoration: none;
 
   transition-duration: 250ms;
+  transition-property: color;
   transition-timing-function: var(--cubic);
 
   color: var(--primary-text-color);
@@ -654,7 +658,8 @@ img {
   font-size: 16px;
   line-height: 1.5;
 
-  transition: background-color 250ms var(--cubic), color 250ms var(--cubic);
+  transition: background-color 250ms var(--cubic), color 250ms var(--cubic),
+    border-color 250ms var(--cubic), box-shadow 250ms var(--cubic);
 
   background-color: var(--lightmode-color);
   color: var(--buttons-bgc-color);
@@ -674,8 +679,8 @@ img {
   color: var(--white);
   border-color: transparent;
 
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* EXAMPLES */
@@ -698,15 +703,16 @@ img {
 } */
 
 .example-link {
+  display: block;
+
   text-decoration: none;
+
+  transition: box-shadow 250ms var(--cubic);
 }
 
 .example-link:is(:hover, :focus) {
-  display: block;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-
-  transition: box-shadow 250ms var(--cubic);
 }
 
 .card-content {
@@ -748,18 +754,19 @@ img {
   width: 100%;
   height: 100%;
 
+  padding: 40px 32px 0px;
+
   transform: translateY(100%);
   transition: transform 250ms var(--cubic);
 
   background-color: var(--social-button-color);
 }
 
-.item:hover .example-overlay {
+.example-link:hover .example-overlay {
   transform: translateY(0);
 }
 
 .overlay-text {
-  padding: 40px 32px 0px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
